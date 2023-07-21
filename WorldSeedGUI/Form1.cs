@@ -69,25 +69,6 @@ namespace WorldSeedGUI
                     Console.WriteLine(seasonAssign);
                     break;
             }
-            //switch (selectedMonth)
-            //{
-            //    case "1" or "2" or "3":
-            //        seasonAssign = "Fall";
-            //        break;
-            //    case "4" or "5" or "6":
-            //        seasonAssign = "Winter";
-            //        break;
-            //    case "7" or "8" or "9":
-            //        seasonAssign = "Spring";
-            //        break;
-            //    case "10" or "11" or "12":
-            //        seasonAssign = "Summer";
-            //        break;
-            //}
-
-
-            // I don't like that I have the random in under every case? can I make this cleaner
-
 
             switch (seasonAssign)
             {
