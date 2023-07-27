@@ -76,6 +76,8 @@ namespace WorldSeedGUI
                     AssignRange(seasonAssign = "Spring");
                     break;
             }
+            Random rnd = new Random();
+            int weather = rnd.Next(1, 100);
 
             switch (seasonAssign)
             {
@@ -153,8 +155,7 @@ namespace WorldSeedGUI
                 }
             }
 
-            Random rnd = new Random();
-            int weather = rnd.Next(1, 100);
+            
 
             void randomizeWeather(int weatherNum, string weatherType1, string weatherType2, string weatherType3, string weatherType4, string weatherType5, string weatherType6, string weatherType7)
             {
