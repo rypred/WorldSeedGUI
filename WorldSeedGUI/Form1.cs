@@ -4,6 +4,7 @@ namespace WorldSeedGUI
 {
     public partial class Form1 : Form
     {
+        private SeasonUtility seasonUtil = new SeasonUtility();
         public Form1()
         {
             InitializeComponent();
@@ -22,66 +23,27 @@ namespace WorldSeedGUI
         {
 
         }
-        private bool isFall(string selectedMonth, int selectedDay) 
-        {
-            if (selectedMonth == "month1" || selectedMonth == "month2" || selectedMonth == "month3")
-                return true;
-            else if (selectedMonth == "month4" && selectedDay <= 16)
-                return true;
-            else
-                return false;
-        }
-        private bool isWinter(string selectedMonth, int selectedDay)
-        {
-            if (selectedMonth == "month5" || selectedMonth == "month6")
-                return true;
-            else if (selectedMonth == "month4" && selectedDay >= 17)
-                return true;
-            else if (selectedMonth == "month 7" && selectedDay !=35)
-                return true;
-            else
-                return false;
-        }
-        private bool isSpring(string selectedMonth, int selectedDay)
-        {
-            if (selectedMonth == "month8" || selectedMonth == "month9" || selectedMonth == "month10")
-                return true;
-            else if (selectedMonth == "month7" && selectedDay == 35)
-                return true;
-            else if (selectedMonth == "month11" && selectedDay <= 16)
-                return true;
-            else
-                return false;
-        }
-        private bool isSummer(string selectedMonth, int selectedDay)
-        {
-            if (selectedMonth == "month12" || selectedMonth == "month13" || selectedMonth == "month14")
-                return true;
-            else if (selectedMonth == "month11" && selectedDay >= 17)
-                return true;
-            else
-                return false;
-        }
+        
         private void button1_Click_1(object sender, EventArgs e)
         {
             string selectedMonth = this.comboBoxMonth.SelectedItem.ToString();
             string dayInput = this.comboBoxDay.SelectedItem.ToString();
             int selectedDay = int.Parse(dayInput);
             string seasonAssign = "";
-
-            if (isFall(selectedMonth, selectedDay)) 
+            
+            if (seasonUtil.isFall(selectedMonth, selectedDay)) 
             {
                 RangeTable.AssignRange(seasonAssign = "Fall");           
             }
-            else if (isWinter(selectedMonth, selectedDay))
+            else if (seasonUtil.isWinter(selectedMonth, selectedDay))
             {
                 RangeTable.AssignRange(seasonAssign = "Winter");
             }
-            else if (isSpring(selectedMonth, selectedDay))
+            else if (seasonUtil.isSpring(selectedMonth, selectedDay))
             {
                 RangeTable.AssignRange(seasonAssign = "Spring");
             }
-            else if (isSummer(selectedMonth, selectedDay))
+            else if (seasonUtil.isSummer(selectedMonth, selectedDay))
             {
                 RangeTable.AssignRange(seasonAssign = "Summer");
             }
