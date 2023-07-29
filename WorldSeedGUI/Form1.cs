@@ -31,21 +31,21 @@ namespace WorldSeedGUI
             int selectedDay = int.Parse(dayInput);
             string seasonAssign = "";
             
-            if (seasonUtil.isFall(selectedMonth, selectedDay)) 
+            if (seasonUtil.isFall(selectedMonth, selectedDay,out seasonAssign)) 
             {
-                RangeTable.AssignRange(seasonAssign = "Fall");           
+                RangeTable.AssignRange(seasonAssign);           
             }
-            else if (seasonUtil.isWinter(selectedMonth, selectedDay))
+            else if (seasonUtil.isWinter(selectedMonth, selectedDay, out seasonAssign))
             {
-                RangeTable.AssignRange(seasonAssign = "Winter");
+                RangeTable.AssignRange(seasonAssign);
             }
-            else if (seasonUtil.isSpring(selectedMonth, selectedDay))
+            else if (seasonUtil.isSpring(selectedMonth, selectedDay, out seasonAssign))
             {
-                RangeTable.AssignRange(seasonAssign = "Spring");
+                RangeTable.AssignRange(seasonAssign);
             }
-            else if (seasonUtil.isSummer(selectedMonth, selectedDay))
+            else if (seasonUtil.isSummer(selectedMonth, selectedDay, out seasonAssign))
             {
-                RangeTable.AssignRange(seasonAssign = "Summer");
+                RangeTable.AssignRange(seasonAssign);
             }
             else
             {
