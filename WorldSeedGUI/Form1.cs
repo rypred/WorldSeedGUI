@@ -31,40 +31,30 @@ namespace WorldSeedGUI
         {
 
         }
-         
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             string selectedMonth = this.comboBoxMonth.SelectedItem.ToString();
             string dayInput = this.comboBoxDay.SelectedItem.ToString();
             int selectedDay = int.Parse(dayInput);
             string seasonAssign = "";
-          
+
             switch (selectedMonth)
             {
-                case "month1" or "month2" or "month3":
+                case "month1" or "month2" or "month3" or "month4" when selectedDay <= 16:
                     RangeTable.AssignRange(seasonAssign = "Fall");
                     break;
-                case "month4" when selectedDay <= 16:
-                    RangeTable.AssignRange(seasonAssign = "Fall");
-                    break;
-                //I dont like that 4 sits here without specifying >= 17 but I guess it works
-                case "month4" or "month5" or "month6":
+                case "month4" or "month5" or "month6" or "month7" when selectedDay !=35:
                     RangeTable.AssignRange(seasonAssign = "Winter");
                     break;
-                case "month7" when selectedDay != 35:
-                    RangeTable.AssignRange(seasonAssign = "Winter");
-                    break;
-                case "month7" when selectedDay == 35:
+                case "month8" or "month9" or "month10" or "month11" or "month7" when selectedDay == 35:
                     RangeTable.AssignRange(seasonAssign = "Spring");
                     break;
-                case "month8" or "month9" or "month10":
-                    RangeTable.AssignRange(seasonAssign = "Spring");
+                //case "month11" when selectedDay <= 16:
+                //    RangeTable.AssignRange(seasonAssign = "Spring");
                     break;
-                case "month11" when selectedDay <= 16:
-                    RangeTable.AssignRange(seasonAssign = "Spring");
-                    break;
-                case "month11" or "month12" or "month13" or "month14":
-                    RangeTable.AssignRange(seasonAssign = "Spring");
+                case "month11" or "month12" or "month13" or "month14" or "month11" when selectedDay >= 17:
+                    RangeTable.AssignRange(seasonAssign = "Summer");
                     break;
             }
             Random rnd = new Random();
@@ -116,6 +106,6 @@ namespace WorldSeedGUI
 
         }
 
-    }
+    }   
 }
 
