@@ -1,6 +1,6 @@
 ﻿namespace WorldSeedGUI
 {
-    partial class Form1
+    partial class EnvironmentWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,6 +35,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -45,7 +46,6 @@
             label1.Size = new Size(61, 15);
             label1.TabIndex = 1;
             label1.Text = "Enter Date";
-            
             // 
             // button1
             // 
@@ -105,11 +105,21 @@
             label4.TabIndex = 6;
             label4.Text = "Day";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(41, 150);
+            label5.Name = "label5";
+            label5.Size = new Size(38, 15);
+            label5.TabIndex = 7;
+            label5.Text = "label5";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -124,12 +134,13 @@
         }
 
         #endregion
-        private Label label1;
         private Button button1;
         private ComboBox comboBoxMonth;
         private ComboBox comboBoxDay;
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label label5;
+        public static Label label1;
     }
 }

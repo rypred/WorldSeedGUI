@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldSeedGUI
+namespace WorldSeedGUI.Environment
 {
     public class SeasonUtility
     {
@@ -12,10 +12,8 @@ namespace WorldSeedGUI
         {
             bool isMiddleOfFall = selectedMonth == "month1" || selectedMonth == "month2" || selectedMonth == "month3";
             bool isEndOfFall = selectedMonth == "month4" && selectedDay <= 16;
-            seasonAssign = "Fall"; 
+            seasonAssign = "Fall";
             return isMiddleOfFall || isEndOfFall;
-            
-
         }
         public bool isWinter(string selectedMonth, int selectedDay, out string seasonAssign)
         {
