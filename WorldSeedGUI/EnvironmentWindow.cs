@@ -40,7 +40,7 @@ namespace WorldSeedGUI
             Random rnd = new Random();
             int weather = rnd.Next(1, 100);
 
-            // determines season based on dates from the combobox input and then assigns the appropriate weather for the season
+            // passes combobox inputs into SeasonUtility to determine season.Then assigns the appropriate ranges for the season by passing that season to the RangeTable. Finally, it calls on randomize weather to determine what the weather is and displays that value in a new window.
             if (seasonUtil.isFall(selectedMonth, selectedDay, out seasonAssign))
             {
 
