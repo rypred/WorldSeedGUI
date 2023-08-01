@@ -29,22 +29,36 @@
         private void InitializeComponent()
         {
             welcomeMessage = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // welcomeMessage
             // 
             welcomeMessage.AutoSize = true;
-            welcomeMessage.Location = new Point(356, 9);
+            welcomeMessage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            welcomeMessage.Location = new Point(12, 9);
             welcomeMessage.Name = "welcomeMessage";
-            welcomeMessage.Size = new Size(38, 15);
+            welcomeMessage.Size = new Size(251, 25);
             welcomeMessage.TabIndex = 0;
-            welcomeMessage.Text = "label1";
+            welcomeMessage.Text = "You shouldn't be seeing this.";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(656, 369);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "Return";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // ShopWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(welcomeMessage);
             Name = "ShopWindow";
             Text = "ShopWindow";
@@ -54,6 +68,7 @@
 
         #endregion
 
+        private Button button1;
         public static Label welcomeMessage;
     }
 }

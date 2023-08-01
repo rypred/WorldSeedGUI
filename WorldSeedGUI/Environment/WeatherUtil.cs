@@ -17,28 +17,22 @@ namespace WorldSeedGUI.Environment
                    
                 case int i when i >= RangeTable.rangeArray[0] && i <= RangeTable.rangeArray[1]:
                     return weatherType2;
-                    //EnvironmentWindow.label1.Text = weatherType2;
-                    //break;
+                    
                 case int i when i >= RangeTable.rangeArray[2] && i <= RangeTable.rangeArray[3]:
                     return weatherType3;
-                    //EnvironmentWindow.label1.Text = weatherType3;
-                    //break;
+                   
                 case int i when i >= RangeTable.rangeArray[4] && i <= RangeTable.rangeArray[5]:
                     return weatherType4;
-                    //EnvironmentWindow.label1.Text = weatherType4;
-                    //break;
+                    
                 case int i when i >= RangeTable.rangeArray[6] && i <= RangeTable.rangeArray[7]:
                     return weatherType5;
-                    //EnvironmentWindow.label1.Text = weatherType5;
-                    //break;
+                    
                 case int i when i >= RangeTable.rangeArray[8] && i <= RangeTable.rangeArray[9]:
                     return weatherType6;
-                    //EnvironmentWindow.label1.Text = weatherType6;
-                    //break;
+                    
                 case int i when i == 100:
                     return weatherType7;
-                    //EnvironmentWindow.label1.Text = weatherType7;
-                    //break;
+                    
                 default
                     : return "Error in random number assignment";
             }
