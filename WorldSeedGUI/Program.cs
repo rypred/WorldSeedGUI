@@ -12,6 +12,8 @@ namespace WorldSeedGUI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new EnvironmentWindow());
+
+          
         }
     }
 }

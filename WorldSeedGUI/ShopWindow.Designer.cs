@@ -30,6 +30,7 @@
         {
             welcomeMessage = new Label();
             button1 = new Button();
+            locationLabel = new Label();
             SuspendLayout();
             // 
             // welcomeMessage
@@ -53,11 +54,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // locationLabel
+            // 
+            locationLabel.AutoSize = true;
+            locationLabel.Location = new Point(16, 39);
+            locationLabel.Name = "locationLabel";
+            locationLabel.Size = new Size(38, 15);
+            locationLabel.TabIndex = 2;
+            locationLabel.Text = "label1";
+            // 
             // ShopWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(locationLabel);
             Controls.Add(button1);
             Controls.Add(welcomeMessage);
             Name = "ShopWindow";
@@ -69,6 +80,7 @@
         #endregion
 
         private Button button1;
+        public static Label locationLabel;
         public static Label welcomeMessage;
     }
 }

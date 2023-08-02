@@ -91,10 +91,12 @@
             // LocationDropdown
             // 
             LocationDropdown.FormattingEnabled = true;
+            LocationDropdown.Items.AddRange(new object[] { "Wugrad", "Barjarn", "Dawnridge" });
             LocationDropdown.Location = new Point(43, 102);
             LocationDropdown.Name = "LocationDropdown";
             LocationDropdown.Size = new Size(269, 23);
             LocationDropdown.TabIndex = 7;
+            LocationDropdown.SelectedIndexChanged += LocationDropdown_SelectedIndexChanged;
             // 
             // location
             // 

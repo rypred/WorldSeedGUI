@@ -5,6 +5,7 @@ namespace WorldSeedGUI
 {
     public partial class EnvironmentWindow : Form
     {
+
         private SeasonUtility seasonUtil = new SeasonUtility();
         public EnvironmentWindow()
         {
@@ -25,6 +26,15 @@ namespace WorldSeedGUI
 
         }
 
+        private void EnvironmentWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LocationDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             ShopWindow shopWindow = new ShopWindow();
@@ -34,6 +44,9 @@ namespace WorldSeedGUI
             string selectedMonth = this.comboBoxMonth.SelectedItem.ToString();
             string dayInput = this.comboBoxDay.SelectedItem.ToString();
             int selectedDay = int.Parse(dayInput);
+
+            string locationName = this.LocationDropdown.SelectedItem.ToString();
+            CityandRegionObjects.GiveCityDetails(locationName);
 
             string seasonAssign = "";
 
@@ -45,26 +58,26 @@ namespace WorldSeedGUI
             {
 
                 RangeTable.AssignRange(seasonAssign);
-                string trueWeather = WeatherUtil.randomizeWeather(weather, "thunderstorming.", "rainy.", "partially cloudy.", "totally clear.", "windy.", "scorchingly hot!", "raining ash.");
-                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Fall and the weather is {trueWeather}";
+                string trueWeather = WeatherUtil.randomizeWeather(weather, "thunderstorming.", "rainy.", "partially cloudy.", "clear skies outside.", "windy.", "scorchingly hot!", "raining ash.");
+                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Fall and the it's {trueWeather}";
             }
             else if (seasonUtil.isWinter(selectedMonth, selectedDay, out seasonAssign))
             {
                 RangeTable.AssignRange(seasonAssign);
-                string trueWeather = WeatherUtil.randomizeWeather(weather, "blizzarding!", "snowy.", "freezing cold.", "overcast.", "partially cloudy.", "totally clear.", "beautiful at night. You can see the sky illuminated with dancing blue and green lights.");
-                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Winter and the weather is {trueWeather}";
+                string trueWeather = WeatherUtil.randomizeWeather(weather, "blizzarding!", "snowy.", "freezing cold.", "overcast.", "partially cloudy.", "clear skies outside.", "beautiful at night. You can see the sky illuminated with dancing blue and green lights.");
+                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Winter and the it's {trueWeather}";
             }
             else if (seasonUtil.isSpring(selectedMonth, selectedDay, out seasonAssign))
             {
                 RangeTable.AssignRange(seasonAssign);
-                string trueWeather = WeatherUtil.randomizeWeather(weather, "thunderstorming.", "raining hard.", "sprinkling.", "overcast.", "partly cloudy.", "totally clear.", "storming ferociously. You feel as though it's out to get you, as lightning seems to strike near only you.");
-                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Spring and the weather is {trueWeather}";
+                string trueWeather = WeatherUtil.randomizeWeather(weather, "thunderstorming.", "raining hard.", "sprinkling.", "overcast.", "partly cloudy.", "clear skies outside.", "storming ferociously. You feel as though it's out to get you, as lightning seems to strike near only you.");
+                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Spring and the it's {trueWeather}";
             }
             else if (seasonUtil.isSummer(selectedMonth, selectedDay, out seasonAssign))
             {
                 RangeTable.AssignRange(seasonAssign);
-                string trueWeather = WeatherUtil.randomizeWeather(weather, "raining.", "humid.", "partly cloudy.", "totally clear.", "windy", "scorchingly hot!", "lovely. The air is clear and the sky is full of stars. As you look up, you see a meteor shower raining down into the atmosphere.");
-                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Summer and the weather is {trueWeather}";
+                string trueWeather = WeatherUtil.randomizeWeather(weather, "raining.", "humid.", "partly cloudy.", "clear skies outside.", "windy", "scorchingly hot!", "lovely outside. The air is clear and the sky is full of stars. As you look up, you see a meteor shower raining down into the atmosphere.");
+                ShopWindow.welcomeMessage.Text = $"The day is {selectedMonth}, {selectedDay}. It's Summer and the it's {trueWeather}";
             }
             else
             {
@@ -75,10 +88,6 @@ namespace WorldSeedGUI
 
         }
 
-        private void EnvironmentWindow_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
